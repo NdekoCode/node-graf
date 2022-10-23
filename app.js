@@ -1,7 +1,7 @@
-import { readFile } from "node:fs/promises"; // On n'importe le module FS avec les Promise
+import { readFile, writeFile } from "node:fs/promises"; // On n'importe le module FS avec les Promise
 console.log("Node.js");
-const content = await Promise.all([
-  readFile("./demo.txt", { encoding: "utf-8" }),
-  readFile("./app.js", { encoding: "utf-8" }),
-]);
-console.log(content);
+await writeFile("./demo.txt", "Bonjour les gens \n", {
+  flag: "a+",
+});
+//
+// console.log(content);
