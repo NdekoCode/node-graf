@@ -12,5 +12,8 @@
   "license": "ISC",
   "volta": {
     "node": "18.11.0"
+  },
+  "dependencies": {
+    "fastify": "^4.9.2"
   }
 }
