@@ -38,3 +38,16 @@ export async function createTodo({ title, completed = false }) {
   await writeFile(todosFile, JSON.stringify(todos));
   return todo;
 }
+/**
+ * @description Supprime une tache dans la BD
+ * @author NdekoCode
+ * @export
+ * @param {number} id
+ */
+export async function removeTodo(id) {
+  const todos = await findTodos();
+  await writeFile(
+    todosFile,
+    JSON.stringify(todos.filter((todo) => todo.id !== id))
+  );
+}
