@@ -12,7 +12,7 @@ import { json } from "node:stream/consumers";
  * @author NdekoCode
  * @export
  * @param {incomingMessage} req
- * @param {Response} es
+ * @param {ServerResponse} res
  * @returns {Promise<Todo[]>}
  */
 export async function index(req, res) {
@@ -24,7 +24,7 @@ export async function index(req, res) {
  * @author NdekoCode
  * @export
  * @param {incomingMessage} req
- * @param {Response} es
+ * @param {ServerResponse} res
  * @returns {Promise<Todo>}
  */
 export async function postTodo(req, res) {
@@ -41,7 +41,7 @@ export async function postTodo(req, res) {
  * @author NdekoCode
  * @export
  * @param {incomingMessage} req
- * @param {Response} res
+ * @param {ServerResponse} res
  * @param {URL} url
  */
 export async function deleteTodo(req, res, url) {
