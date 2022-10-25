@@ -18,7 +18,11 @@ function spawnNode() {
   return pr;
 }
 let childNodeProcess = spawnNode();
-const watcher = watch("./", { recursive: true });
+import { fileURLToPath } from "url";
+import path from "path";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const watcher = watch(__dirname, { recursive: true });
 for await (const event of watcher) {
   if (event.filename.endsWith(".js")) {
     childNodeProcess.kill("SIGKILL"); // On kill le processus et on envois un signal pour kill le processus
